@@ -98,7 +98,9 @@
 
         check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
       end
-      # check that a second csv can be imported
+    end 
+       # check that a second csv can be imported
+    describe "importing from entrie_2.csv" do 
       it "imports the correct number of entries" do 
 
       book.import_from_csv("entries_2.csv")
