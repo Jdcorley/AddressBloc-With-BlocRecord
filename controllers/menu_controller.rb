@@ -87,7 +87,7 @@ class MenuController
   def entry_n_submenu
     system "clear"
     print "Entry Number to view: "
-    selection = gets.chomp.to_i
+    selection = (gets.chomp.to_i)-1
 
     if selection < @address_book.entries.count
       puts @address_book.entries[selection]
