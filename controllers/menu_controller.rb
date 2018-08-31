@@ -199,20 +199,19 @@ class MenuController
   end
 
   def edit_entry(entry)
+    updates = {}
     print 'Updated name: '
     name = gets.chomp
+    updates[:name] = name unless name.empty?
     print'Updated phone number: '
     phone_number = gets.chomp
+    updates[:phone_number] = phone_number unless phone_number.empty?
     print 'Update email: '
     email = gets.chomp
-
-    entry.name = name unless name.empty?
-    entry.phone_number = phone_number unless phone_number.empty?
-    entry.email = email unless email.empty?
+    updates[:email] = email unless email.empty?
     system 'clear'
-
     puts 'Updated entry:'
-    puts entry
+    puts Entry.find(entry.id)
   end
 
   def entry_submenu(entry)
